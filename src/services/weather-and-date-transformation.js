@@ -21,6 +21,34 @@ export class Transformation {
     return `${year}-${month}-${day}`;
   };
 
+  getWeekday = date => {
+    const tempDate = new Date(date * 1000);
+    const days = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ];
+    return days[tempDate.getDay()];
+  };
+
+  setWeekdayTitle = date => {
+    let weekday = '';
+    return () => {
+      if (date === weekday) {
+        return null;
+      }
+
+      if (date !== weekday) {
+        weekday = date;
+        return this.getWeekday(weekday);
+      }
+    };
+  };
+
   degToCard = deg => {
     if (deg > 11.25 && deg < 33.75) {
       return 'NNE';

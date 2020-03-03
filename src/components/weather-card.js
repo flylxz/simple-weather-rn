@@ -7,8 +7,6 @@ export const WeatherCard = ({props}) => {
     name,
     description,
     mainTemp,
-    minTemp,
-    maxTemp,
     feelsTemp,
     humidity,
     pressure,
@@ -51,12 +49,12 @@ export const WeatherCard = ({props}) => {
         </View>
       </View>
       <View style={styles.additionInfo}>
+        <Text style={styles.mainText}>
+          Wind: {windSpeed}m/s {windDir}
+        </Text>
         <Text style={styles.mainText}>Humidity: {humidity}%</Text>
         <Text style={styles.mainText}>
           Pressure: {~~(pressure / 1.333)}mmHg
-        </Text>
-        <Text style={styles.mainText}>
-          Wind: {windSpeed}m/s {windDir}
         </Text>
         <Text style={styles.mainText}>Sunrise: {transformDate(sunrise)}</Text>
         <Text style={styles.mainText}>Sunset: {transformDate(sunset)}</Text>
@@ -102,7 +100,7 @@ const styles = StyleSheet.create({
   image: {
     width: 100,
     height: 100,
-    backgroundColor: '#ffff0099',
+    backgroundColor: '#e1e1e155',
     borderRadius: 50,
   },
   mainText: {

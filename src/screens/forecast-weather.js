@@ -17,7 +17,6 @@ export const ForecastWeather = () => {
 
   const updateForecastWeather = () => {
     weatherService.getForecastWeather(`Kharkiv,ua`).then(forecastData => {
-      console.log(forecastData);
       setForecastWeather(forecastData);
     });
   };

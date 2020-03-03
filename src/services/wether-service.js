@@ -47,7 +47,7 @@ export class WeatherService {
   _transformForecastWeather = forecast => {
     return {
       name: `${forecast.city.name}, ${forecast.city.country}`,
-      list: forecast.list.slice(0, 8),
+      list: forecast.list,
     };
   };
 }
